@@ -1,5 +1,5 @@
 NAME = push_swap
-FILES = check_validaty.c convert_to_int.c handle_errors.c
+FILES = check_validaty.c convert_to_int.c handle_errors.c check_sorted.c
 SRCS = $(addprefix ./srcs/, $(FILES))
 FLAGS = -Wall -Werror -Werror
 LIBFT = libft.a

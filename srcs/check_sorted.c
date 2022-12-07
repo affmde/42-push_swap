@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.h                                     :+:      :+:    :+:   */
+/*   check_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/07 20:00:51 by andrferr         ###   ########.fr       */
+/*   Created: 2022/12/07 19:58:22 by andrferr          #+#    #+#             */
+/*   Updated: 2022/12/07 20:06:13 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#include "../includes/ft_push_swap.h"
 
-# include "../libft/libft.h"
-# include "unistd.h"
-# include <stdio.h>
-
-typedef struct	s_ps
+int	is_sorted(int *arr, int len)
 {
-	int	*arr;
-}			t_ps;
+	int	i;
 
-int		*parse(int argv, char **argc);
-int		is_valid(int argv, char **argc);
-void	output_error(int quit);
-int		is_sorted(int *arr, int len);
-
-#endif
+	i = 1;
+	while (i < len - 1)
+	{
+		if (arr[i] < arr [i - 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}

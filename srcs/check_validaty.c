@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:09:42 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/07 19:35:51 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:44:17 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	check_overflow(char *str)
 	else
 		len = ft_nbr_of_digits(val);
 	let = ft_strlen(str);
-	printf("%d  - %d\n", let, len);
 	if (let != len)
 		return (0);
 	return (1);
