@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:09:42 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/07 18:24:44 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:35:51 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	is_repeated(int argv, char **argc)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 1;
 	while (i < argv)
@@ -23,7 +23,8 @@ int	is_repeated(int argv, char **argc)
 		j = i + 1;
 		while (j < argv)
 		{
-			if (!ft_strncmp(argc[i], argc[j], ft_max(ft_strlen(argc[i]), ft_strlen(argc[j]))))
+			if (!ft_strncmp(argc[i], argc[j],
+					ft_max(ft_strlen(argc[i]), ft_strlen(argc[j]))))
 				return (0);
 			j++;
 		}
@@ -32,28 +33,48 @@ int	is_repeated(int argv, char **argc)
 	return (1);
 }
 
+int	check_overflow(char *str)
+{
+	int	len;
+	int	let;
+	int	val;
+
+	val = ft_atoi(str);
+	if (val < 0)
+		len = ft_nbr_of_digits(val) + 1;
+	else
+		len = ft_nbr_of_digits(val);
+	let = ft_strlen(str);
+	printf("%d  - %d\n", let, len);
+	if (let != len)
+		return (0);
+	return (1);
+}
+
 int	check_no_digits(int argv, char **argc)
 {
 	int	i;
-	int	int_len;
-	int	strlen;
-	int num;
+	int	j;
 
 	i = 1;
 	while (i < argv)
 	{
-		num = ft_atoi(argc[i]);
-		if (num < 0)
-			int_len = ft_nbr_of_digits(ft_atoi(argc[i])) + 1;
-		else
-			int_len = ft_nbr_of_digits(ft_atoi(argc[i]));
-		strlen = ft_strlen(argc[i]);
-		if (int_len != strlen)
+		if (!check_overflow(argc[i]))
 			return (0);
+		j = 0;
+		if (argc[i][0] == '-' || argc[i][0] == '+')
+			j++;
+		while (argc[i][j])
+		{
+			if (!ft_isdigit(argc[i][j]))
+				return (0);
+			j++;
+		}
 		i++;
 	}
 	return (1);
 }
+
 int	is_valid(int argv, char **argc)
 {
 	if (!check_no_digits(argv, argc))
