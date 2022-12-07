@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 20:45:09 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/07 17:26:48 by andrferr         ###   ########.fr       */
+/*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
+/*   Updated: 2022/12/07 17:19:03 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_push_swap.h"
+#ifndef FT_PUSH_SWAP_H
+# define FT_PUSH_SWAP_H
 
-int main(int argv, char **argc)
-{
-	if (argv < 2)
-		return (0);
-	if (!is_valid(argv, argc))
-		output_error(1);
-	return (0);
-}
+#include "../libft/libft.h"
+#include "unistd.h"
+#include <stdio.h>
+int		*parse(int argv, char **argc);
+int		is_valid(int argv, char **argc);
+void	output_error(int quit);
+
+#endif

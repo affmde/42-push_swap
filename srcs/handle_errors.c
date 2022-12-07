@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 20:45:09 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/07 17:26:48 by andrferr         ###   ########.fr       */
+/*   Created: 2022/12/07 17:12:50 by andrferr          #+#    #+#             */
+/*   Updated: 2022/12/07 17:18:50 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_push_swap.h"
+#include "../includes/ft_push_swap.h"
 
-int main(int argv, char **argc)
+void	output_error(int quit)
 {
-	if (argv < 2)
-		return (0);
-	if (!is_valid(argv, argc))
-		output_error(1);
-	return (0);
+	write(2, "Error\n", ft_strlen("Error\n"));
+	if (quit)
+		exit(1);
 }
