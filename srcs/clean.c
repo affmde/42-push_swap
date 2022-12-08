@@ -6,13 +6,16 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 11:04:07 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 11:21:32 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:16:06 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-void	free_int_arr(int *arr, int len)
+void	clean(t_stack *stack)
 {
-	free(arr);
+	if (stack->arr)
+		free(stack->arr);
+	if (stack)
+		free(stack);
 }

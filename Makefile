@@ -1,5 +1,6 @@
 NAME = push_swap
-FILES = check_validaty.c handle_errors.c check_sorted.c init_stack.c clean.c fill_stack.c stack_base_actions.c
+FILES = check_validaty.c handle_errors.c check_sorted.c init_stack.c clean.c fill_stack.c stack_base_actions.c \
+handle_cases.c swaps.c pushes.c rotations.c reverses.c
 SRCS = $(addprefix ./srcs/, $(FILES))
 FLAGS = -Wall -Werror -Werror
 LIBFT = libft.a

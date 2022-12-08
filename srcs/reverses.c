@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_base_actions.c                               :+:      :+:    :+:   */
+/*   reverses.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 11:31:26 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 16:41:00 by andrferr         ###   ########.fr       */
+/*   Created: 2022/12/08 18:11:29 by andrferr          #+#    #+#             */
+/*   Updated: 2022/12/08 18:37:44 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-int	full(t_stack *stack)
+void	rr(t_stack *stack, char stack_name)
 {
-	if (stack->top == stack->max - 1)
-		return (1);
-	return (0);
+	int	tmp;
+	int	i;
+
+	i = 0;
+	tmp = stack->arr[0];
+	while (i < stack->top)
+	{
+		stack->arr[i] = stack->arr[i + 1];
+		i++;
+	}
+	stack->arr[stack->top] = tmp;
+	if (stack_name = 'a')
+		ft_putstr("rra\n");
+	if (stack_name = 'b')
+		ft_putstr("rrb\n");
+
 }
 
-int	empty(t_stack *stack)
+void	rrr(t_stack *stack1, t_stack *stack2)
 {
-	if (stack->top == -1)
-		return (1);
-	return (0);
-}
-
-int	push(t_stack *stack, int val)
-{
-	if (full(stack))
-		return (0);
-	stack->top++;
-	stack->arr[stack->top] = val;
-	return (1);
-}
-
-int	pop(t_stack *stack)
-{
-	if (empty(stack))
-		return (0);
-	stack->top--;
-	return (1);
+	rra(stack1, 'r');
+	rrb(stack2, 'r');
+	ft_putstr("rrr\n");
 }

@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_base_actions.c                               :+:      :+:    :+:   */
+/*   pushes.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 11:31:26 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 16:41:00 by andrferr         ###   ########.fr       */
+/*   Created: 2022/12/08 16:20:34 by andrferr          #+#    #+#             */
+/*   Updated: 2022/12/08 17:36:21 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
+#include "../libft/libft.h"
 
-int	full(t_stack *stack)
+void	pa(t_stack *stack1, t_stack *stack2)
 {
-	if (stack->top == stack->max - 1)
-		return (1);
-	return (0);
+	push(stack1, stack2->arr[stack2->top]);
+	pop(stack2);
+	ft_putstr("pa\n");
 }
 
-int	empty(t_stack *stack)
+void	pb(t_stack *stack1, t_stack *stack2)
 {
-	if (stack->top == -1)
-		return (1);
-	return (0);
+	push(stack2, stack1->arr[stack1->top]);
+	pop(stack1);
+	ft_putstr("pb\n");
 }
 
-int	push(t_stack *stack, int val)
-{
-	if (full(stack))
-		return (0);
-	stack->top++;
-	stack->arr[stack->top] = val;
-	return (1);
-}
-
-int	pop(t_stack *stack)
-{
-	if (empty(stack))
-		return (0);
-	stack->top--;
-	return (1);
-}

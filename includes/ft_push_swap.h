@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 12:13:30 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:42:27 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_stack
 }			t_stack;
 
 t_stack	*init_stack(int max);
-void	free_int_arr(int *arr, int len);
+void	clean(t_stack *stack);
 int		is_valid(int argv, char **argc);
 void	output_error(int quit);
 int		is_sorted(int *arr, int len);
@@ -34,5 +34,12 @@ int		full(t_stack *stack);
 void	fill_stack(t_stack *stack, char **argc);
 int		empty(t_stack *stack);
 int		pop(t_stack *stack);
-
+int		handle_cases(t_stack *stack1, t_stack *stack2);
+void	s(t_stack *stack, char stack_name);
+void	ss(t_stack *stack1, t_stack *stack2);
+void	pa(t_stack *stack1, t_stack *stack2);
+void	pb(t_stack *stack1, t_stack *stack2);
+void	r(t_stack *stack, char stack_name);
+void	rr(t_stack *stack1, t_stack *stack2);
+void	rrr(t_stack *stack1, t_stack *stack2);
 #endif

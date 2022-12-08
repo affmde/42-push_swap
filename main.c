@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:45:09 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 12:16:55 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:35:02 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argv, char **argc)
 {
 	t_stack *stack1;
-	//t_stack *stack2;
+	t_stack *stack2;
 
 	if (argv < 2)
 		return (0);
@@ -24,20 +24,24 @@ int	main(int argv, char **argc)
 	stack1 = init_stack(argv);
 	if (!stack1)
 		return (0);
-	fill_stack(stack1, argc);
-	if (is_sorted(stack1->arr, argv))
+	stack2 = init_stack(argv);
+	if (!stack2)
 	{
-		free_int_arr(stack1->arr, argv);
-		free(stack1);
+		free (stack1);
 		return (0);
 	}
+	fill_stack(stack1, argc);
+	handle_cases(stack1, stack2);
+	pb(stack1, stack2);
+	pb(stack1, stack2);
+	rra(stack1);
+	rra(stack2);
 	for(int i = 0; i <= stack1->top; i++)
 		printf("%d ", stack1->arr[i]);
-	// stack2 = (t_ps *)ft_calloc(1, sizeof(t_ps));
-	// if (!stack2)
-	// {
-	// 	free (stack1);
-	// 	return (0);
-	// }
+	printf("\n-----------\n");
+	for(int i = 0; i <= stack2->top; i++)
+		printf("%d ", stack2->arr[i]);
+	clean(stack1);
+	clean(stack2);
 	return (0);
 }
