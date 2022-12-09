@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 19:58:22 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 12:32:01 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:02:52 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	is_sorted(int *arr, int len)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (i < len - 1)
 	{
 		if (arr[i] < arr [i - 1])
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/09 08:18:21 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:54:27 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ typedef struct	s_stack
 	int	top;
 }			t_stack;
 
+typedef struct s_control
+{
+	int		max;
+	char	**arr;
+}		t_control;
+
+void	print_stacks(t_stack *stack1, t_stack *stack2); //DONT FORGET TO REMOVE THIS!!!!!!!!!!!
 t_stack	*init_stack(int max);
 void	clean(t_stack *stack);
-int		is_valid(int argv, char **argc);
+void	free_char_arr(char **arr, int len);
+int		is_valid(int argv, char **argc, t_control *control);
 void	output_error(int quit);
 int		is_sorted(int *arr, int len);
 int		push(t_stack *stack, int val);
@@ -43,4 +51,8 @@ void	r(t_stack *stack, char stack_name);
 void	rr(t_stack *stack1, t_stack *stack2);
 void	rrab(t_stack *stack, char stack_name);
 void	rrr(t_stack *stack1, t_stack *stack2);
+void	handle_3(t_stack *stack1, t_stack *stack2);
+char	**parse(char *str);
+char	**parse_if_argc(int argv, char **argc);
+int		arr_len(char **arr);
 #endif

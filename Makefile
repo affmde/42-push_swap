@@ -1,6 +1,6 @@
 NAME = push_swap
 FILES = check_validaty.c handle_errors.c check_sorted.c init_stack.c clean.c fill_stack.c stack_base_actions.c \
-handle_cases.c swaps.c pushes.c rotations.c reverses.c
+handle_cases.c swaps.c pushes.c rotations.c reverses.c length_3.c parse.c
 SRCS = $(addprefix ./srcs/, $(FILES))
 FLAGS = -Wall -Werror -Werror
 LIBFT = libft.a
@@ -13,9 +13,9 @@ LOBJECTS = $(LSRCS:.c=.o)
 LODEST = $(addprefix ./libft/, $(LOBJECTS))
 all: $(NAME)
 
-$(NAME): $(SRCS)
+$(NAME): $(SRCS) main.c
 	cd libft && make
-	cc $(FLAGS) -o $(NAME) main.c $(SRCS) -L. ./libft/$(LIBFT)
+	cc $(FLAGS) -o $(NAME) main.c $(SRCS) -L. ./libft/$(LIBFT) printf_stacks.c
 
 clean:
 	rm -f *.o $(LODEST)

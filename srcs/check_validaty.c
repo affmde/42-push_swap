@@ -6,25 +6,25 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:09:42 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/07 19:44:17 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/09 15:37:36 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-int	is_repeated(int argv, char **argc)
+static int	is_repeated(int len, char **arr)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	while (i < argv)
+	while (i < len)
 	{
 		j = i + 1;
-		while (j < argv)
+		while (j < len)
 		{
-			if (!ft_strncmp(argc[i], argc[j],
-					ft_max(ft_strlen(argc[i]), ft_strlen(argc[j]))))
+			if (!ft_strncmp(arr[i], arr[j],
+					ft_max(ft_strlen(arr[i]), ft_strlen(arr[j]))))
 				return (0);
 			j++;
 		}
@@ -33,7 +33,7 @@ int	is_repeated(int argv, char **argc)
 	return (1);
 }
 
-int	check_overflow(char *str)
+static int	check_overflow(char *str)
 {
 	int	len;
 	int	let;
@@ -50,22 +50,24 @@ int	check_overflow(char *str)
 	return (1);
 }
 
-int	check_no_digits(int argv, char **argc)
+static int	check_no_digits(int len, char **arr)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < argv)
+	i = 0;
+	while (i < len)
 	{
-		if (!check_overflow(argc[i]))
+		if (!check_overflow(arr[i]))
 			return (0);
 		j = 0;
-		if (argc[i][0] == '-' || argc[i][0] == '+')
+		if (arr[i][j] == '-' || arr[i][j] == '+')
 			j++;
-		while (argc[i][j])
+		if (!arr[i][j])
+			return (0);
+		while (arr[i][j])
 		{
-			if (!ft_isdigit(argc[i][j]))
+			if (!ft_isdigit(arr[i][j]))
 				return (0);
 			j++;
 		}
@@ -74,11 +76,27 @@ int	check_no_digits(int argv, char **argc)
 	return (1);
 }
 
-int	is_valid(int argv, char **argc)
+int	is_valid(int argv, char **argc, t_control *control)
 {
-	if (!check_no_digits(argv, argc))
+	char **arr;
+	int	len;
+
+
+	if (argv == 2)
+	{
+		arr = parse(argc[1]);
+		len = arr_len(arr);
+	}
+	if (argv > 2)
+	{
+		arr = parse_if_argc(argv, argc);
+		len = arr_len(arr);
+	}
+	control->arr = arr;
+	if (!check_no_digits(len, arr))
 		return (0);
-	if (!is_repeated(argv, argc))
+	if (!is_repeated(len, arr))
 		return (0);
+	control->max = len;
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 16:10:24 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 18:41:45 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/09 15:47:19 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	s(t_stack *stack, char stack_name)
 {
 	int	tmp;
-
+	
 	tmp = stack->arr[stack->top];
 	stack->arr[stack->top] = stack->arr[stack->top - 1];
 	stack->arr[stack->top - 1] = tmp;
