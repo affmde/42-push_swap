@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:26:39 by andrferr          #+#    #+#             */
-/*   Updated: 2022/11/03 12:11:02 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:18:13 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!a)
 		return (0);
 	i = 0;
-	while (i < len && s[i])
+	while (i < len && s[start + i])
 	{
 		a[i] = s[start + i];
 		i++;
