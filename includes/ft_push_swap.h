@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 18:42:27 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/09 08:18:21 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void	pa(t_stack *stack1, t_stack *stack2);
 void	pb(t_stack *stack1, t_stack *stack2);
 void	r(t_stack *stack, char stack_name);
 void	rr(t_stack *stack1, t_stack *stack2);
+void	rrab(t_stack *stack, char stack_name);
 void	rrr(t_stack *stack1, t_stack *stack2);
 #endif

@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:45:09 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/08 18:35:02 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/09 08:26:12 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	main(int argv, char **argc)
 	handle_cases(stack1, stack2);
 	pb(stack1, stack2);
 	pb(stack1, stack2);
-	rra(stack1);
-	rra(stack2);
+	rrab(stack1, 'a');
+	rrab(stack2, 'b');
 	for(int i = 0; i <= stack1->top; i++)
 		printf("%d ", stack1->arr[i]);
 	printf("\n-----------\n");
