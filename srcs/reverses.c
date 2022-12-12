@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:11:29 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/09 08:25:06 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/11 10:05:31 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rrab(t_stack *stack, char stack_name)
 	}
 	stack->arr[stack->top] = tmp;
 	if (stack_name == 'a')
-		ft_putstr("ra\n");
+		ft_putstr("rra\n");
 	if (stack_name == 'b')
 		ft_putstr("rrb\n");
 
