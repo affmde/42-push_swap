@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 11:31:26 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/11 11:08:28 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:07:07 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,11 @@ int	pop(t_stack *stack)
 	stack->arr[stack->top] = 0;
 	stack->top--;
 	return (1);
+}
+
+int	top(t_stack *stack)
+{
+	if (empty(stack))
+		return (0);
+	return (stack->arr[stack->top]);
 }

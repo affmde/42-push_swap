@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/11 13:52:15 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:07:33 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		full(t_stack *stack);
 void	fill_stack(t_stack *stack, char **argc);
 int		empty(t_stack *stack);
 int		pop(t_stack *stack);
+int		top(t_stack *stack);
 int		handle_cases(t_stack *stack1, t_stack *stack2);
 void	s(t_stack *stack, char stack_name);
 void	ss(t_stack *stack1, t_stack *stack2);
@@ -55,7 +56,7 @@ void	handle_3(t_stack *stack1);
 char	**parse(char *str);
 char	**parse_if_argc(int argv, char **argc);
 int		arr_len(char **arr);
-void    handle_5(t_stack *stack1, t_stack *stack2);
+void	handle_5(t_stack *stack1, t_stack *stack2);
 
 
 #endif
