@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:09:42 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/09 15:37:36 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/13 08:57:25 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	is_repeated(int len, char **arr)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (i < len)
 	{
 		j = i + 1;
@@ -78,8 +78,8 @@ static int	check_no_digits(int len, char **arr)
 
 int	is_valid(int argv, char **argc, t_control *control)
 {
-	char **arr;
-	int	len;
+	char	**arr;
+	int		len;
 
 
 	if (argv == 2)
