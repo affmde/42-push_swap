@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:56:51 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/13 12:19:37 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:01:52 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,9 @@ static void check_faster(t_stack *stack, int val)
 		rrab(stack, 'a');
 }
 
-void	handle_5(t_stack *stack1, t_stack *stack2)
+void	handle_minmax_on_b(t_stack *stack1, t_stack *stack2)
 {
-	pb(stack1, stack2);
-	pb(stack1, stack2);
-	handle_3(stack1);
-	while (top(stack2))
-	{
-		if (top(stack2) < get_min(stack1))
+	if (top(stack2) < get_min(stack1))
 		{
 			while(top(stack1) != get_min(stack1))
 				check_faster(stack1, get_min(stack1));
@@ -79,6 +74,17 @@ void	handle_5(t_stack *stack1, t_stack *stack2)
 			pa(stack1, stack2);
 			r(stack1, 'a');
 		}
+}
+
+void	handle_5(t_stack *stack1, t_stack *stack2)
+{
+	pb(stack1, stack2);
+	pb(stack1, stack2);
+	handle_3(stack1);
+	while (top(stack2))
+	{
+		if (top(stack2) < get_min(stack1) || top(stack2) > get_bigger(stack1))
+			handle_minmax_on_b(stack1, stack2);
 		else
 		{
 			while (!(top(stack1) < top(stack2) && stack1->arr[stack1->top - 1] > top(stack2)))
