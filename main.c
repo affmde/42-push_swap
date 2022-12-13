@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:45:09 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/12 16:42:41 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:54:34 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argv, char **argc)
 	fill_stack(stack1, control.arr);
 	//print_stacks(stack1, stack2);
 	handle_cases(stack1, stack2);
-	print_stacks(stack1, stack2);
+	//print_stacks(stack1, stack2);
 	clean(stack1);
 	clean(stack2);
 	free_char_arr(control.arr, arr_len(control.arr));
