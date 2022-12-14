@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/12 12:07:33 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:06:49 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ typedef struct s_control
 	int		max;
 	char	**arr;
 }		t_control;
+
+typedef struct	s_portion
+{
+	int	start;
+	int	end;
+}		t_portion;
 
 void	print_stacks(t_stack *stack1, t_stack *stack2); //DONT FORGET TO REMOVE THIS!!!!!!!!!!!
 t_stack	*init_stack(int max);
@@ -57,6 +63,9 @@ char	**parse(char *str);
 char	**parse_if_argc(int argv, char **argc);
 int		arr_len(char **arr);
 void	handle_5(t_stack *stack1, t_stack *stack2);
-
+void	handle_100(t_stack *stack1, t_stack *stack2);
+int		get_bigger(t_stack *stack);
+int		get_min(t_stack *stack);
+int		check_faster(t_stack *stack, int val);
 
 #endif
