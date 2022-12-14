@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:25:58 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 17:10:09 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 20:14:01 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	handle_100(t_stack *stack1, t_stack *stack2)
 	int range = (get_bigger(stack1) - get_min(stack1)) / 6;
 
 	portion.start = get_min(stack1);
-	portion.end = portion.start + 300;
+	portion.end = portion.start + range;
 	while (!empty(stack1))
 	{
 		while (check_values_range(stack1, stack2, portion))
