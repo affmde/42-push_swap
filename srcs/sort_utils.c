@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 14:40:26 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 12:08:11 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:27:38 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,21 @@ int	check_faster(t_stack *stack, int val)
 		return (1);
 	else
 		return (0);
+}
+void handle_checker(int checker, t_stack *stack1, t_stack *stack2, char instruction)
+{
+	if(checker)
+	{
+		if(instruction == 'a')
+			rotation(stack1, stack2, 'a');
+		else if (instruction == 'b')
+			rotation(stack1, stack2, 'b');
+	}
+	else
+	{
+		if (instruction == 'a')
+			reverse(stack1, stack2, 'a');
+		else if (instruction == 'b')
+			reverse(stack1, stack2, 'b');
+	}
 }

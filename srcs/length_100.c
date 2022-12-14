@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:25:58 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 11:56:49 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 17:10:09 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,13 @@
 
 void	handle_portion(t_stack *stack1, t_stack *stack2, t_portion portion)
 {
-	if (top(stack1) >= portion.start && top(stack1) <= portion.end)
+	if (top(stack1) > get_bigger(stack2) || empty(stack2))
+		pb(stack1, stack2);
+	else
 	{
-		if (empty(stack2))
-			pb(stack1, stack2);
-		else if (top(stack1) < get_min(stack2))
-		{
-			while(top(stack2) != get_min(stack2))
-				check_faster(stack2, get_min(stack2));
-			pb(stack1, stack2);
-			//print_stacks(stack1, stack2);
-		}
-		else if (top(stack1) > get_bigger(stack2))
-		{
-			if (empty(stack2))
-			{
-				pb(stack1, stack2);
-				//print_stacks(stack1, stack2);
-			}
-			else
-			{
-				printf("HERE\n");
-				while(top(stack2) != get_min(stack2))
-					check_faster(stack2, get_min(stack2));
-				pb(stack1, stack2);
-				//print_stacks(stack1, stack2);
-				r(stack2, 'b');
-				//print_stacks(stack1, stack2);
-			}
-			
-		}
-		else
-		{
-			while(!(top(stack2) < top(stack1) && stack2->arr[stack2->top - 1] > top(stack1)))
-			{
-				r(stack2, 'a');
-				//print_stacks(stack1, stack2);
-			}
-			r(stack2, 'b');
-			//print_stacks(stack1, stack2);
-			pb(stack1, stack2);
-			//print_stacks(stack1, stack2);
-		}
+		pb(stack1, stack2);
+		rotation(stack1, stack2, 'b');
 	}
-	while (get_min(stack2) != top(stack2))
-		check_faster(stack2, get_min(stack2));
 }
 
 static int	check_values_range(t_stack *stack, t_stack *stack2, t_portion portion)
@@ -112,26 +74,33 @@ void	handle_100(t_stack *stack1, t_stack *stack2)
 {
 	t_portion portion;
 	int	val;
+	int	checker;
+	int range = (get_bigger(stack1) - get_min(stack1)) / 6;
+
 	portion.start = get_min(stack1);
-	portion.end = portion.start + 10;
-	//printf("faster: %d\n", faster_to_top(stack1, portion));
+	portion.end = portion.start + 300;
 	while (!empty(stack1))
 	{
 		while (check_values_range(stack1, stack2, portion))
 		{
 			
 			val = faster_to_top(stack1, portion);
+			checker = check_faster(stack1, val);
 			while (top(stack1) != val)
-				check_faster(stack1, val);
+				handle_checker(checker, stack1, stack2, 'a');
 			handle_portion(stack1, stack2, portion);
 		}
-		portion.start += 20;
-		portion.end += 20;
+		portion.start += range;
+		portion.end += range;
 	}
+	
 	while (!empty(stack2))
 	{
-		rrab(stack2, 'b');
+		int checker = check_faster(stack2, get_bigger(stack2));
+		while(top(stack2) != get_bigger(stack2))
+			handle_checker(checker, stack1, stack2, 'b');
 		pa(stack1, stack2);
 	}
+	//printf("range: %d\n", range);
 	//print_stacks(stack1, stack2);
 }

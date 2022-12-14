@@ -6,13 +6,13 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:11:29 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/11 10:05:31 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:19:51 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-void	rrab(t_stack *stack, char stack_name)
+static void	rrab(t_stack *stack)
 {
 	int	tmp;
 	int	i;
@@ -25,16 +25,25 @@ void	rrab(t_stack *stack, char stack_name)
 		i++;
 	}
 	stack->arr[stack->top] = tmp;
-	if (stack_name == 'a')
-		ft_putstr("rra\n");
-	if (stack_name == 'b')
-		ft_putstr("rrb\n");
-
 }
 
-void	rrr(t_stack *stack1, t_stack *stack2)
+void	reverse(t_stack *stack1, t_stack *stack2, char order)
 {
-	rrab(stack1, 'r');
-	rrab(stack2, 'r');
-	ft_putstr("rrr\n");
+	if (order == 'a')
+	{
+		rrab(stack1);
+		ft_putstr("rra\n");
+	}
+	else if (order == 'b')
+	{
+		rrab(stack2);
+		ft_putstr("rrb\n");
+	}
+	else
+	{
+		rrab(stack1);
+		rrab(stack2);
+		ft_putstr("rrr\n");
+	}
+	
 }

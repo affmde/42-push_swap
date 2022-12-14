@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 12:06:49 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:34:16 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,12 @@ int		empty(t_stack *stack);
 int		pop(t_stack *stack);
 int		top(t_stack *stack);
 int		handle_cases(t_stack *stack1, t_stack *stack2);
-void	s(t_stack *stack, char stack_name);
-void	ss(t_stack *stack1, t_stack *stack2);
+void	swaps(t_stack *stack1, t_stack *stack2, char instruction);
 void	pa(t_stack *stack1, t_stack *stack2);
 void	pb(t_stack *stack1, t_stack *stack2);
-void	r(t_stack *stack, char stack_name);
-void	rr(t_stack *stack1, t_stack *stack2);
-void	rrab(t_stack *stack, char stack_name);
-void	rrr(t_stack *stack1, t_stack *stack2);
-void	handle_3(t_stack *stack1);
+void	rotation(t_stack *stack1, t_stack *stack2, char instruction);
+void	reverse(t_stack *stack1, t_stack *stack2, char order);
+void	handle_3(t_stack *stack1, t_stack *stack2);
 char	**parse(char *str);
 char	**parse_if_argc(int argv, char **argc);
 int		arr_len(char **arr);
@@ -66,6 +63,7 @@ void	handle_5(t_stack *stack1, t_stack *stack2);
 void	handle_100(t_stack *stack1, t_stack *stack2);
 int		get_bigger(t_stack *stack);
 int		get_min(t_stack *stack);
+void	handle_checker(int checker, t_stack *stack1, t_stack *stack2, char instruction);
 int		check_faster(t_stack *stack, int val);
 
 #endif

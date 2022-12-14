@@ -6,13 +6,13 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:57:23 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/13 08:32:12 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:23:24 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-void	r(t_stack *stack, char stack_name)
+static void	r(t_stack *stack)
 {
 	int tmp;
 	int i;
@@ -25,15 +25,24 @@ void	r(t_stack *stack, char stack_name)
 		i--;
 	}
 	stack->arr[0] = tmp;
-	if (stack_name == 'a')
-		ft_putstr("ra\n");
-	if (stack_name == 'b')
-		ft_putstr("rb\n");
 }
 
-void	rr(t_stack *stack1, t_stack *stack2)
+void	rotation(t_stack *stack1, t_stack *stack2, char instruction)
 {
-	r(stack1, 'r');
-	r(stack2, 'r');
-	ft_putstr("rr\n");
+	if (instruction == 'a')
+	{
+		r(stack1);
+		ft_putstr("ra\n");
+	}
+	else if (instruction == 'b')
+	{
+		r(stack2);
+		ft_putstr("rb\n");
+	}
+	else
+	{
+		r(stack1);
+		r(stack2);
+		ft_putstr("rr\n");
+	}
 }

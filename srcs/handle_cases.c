@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 12:35:16 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/13 13:29:33 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:35:06 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static int	check_sorted(t_stack *stack1, t_stack *stack2)
 	return (0);
 }
 
-static void	handle_2(t_stack *stack)
+static void	handle_2(t_stack *stack1, t_stack *stack2)
 {
-	if (stack->arr[0] < stack->arr[1])
-		s(stack, 'a');
+	if (stack1->arr[0] < stack1->arr[1])
+		swaps(stack1, stack2, 'a');
 }
 
 int	handle_cases(t_stack *stack1, t_stack *stack2)
@@ -30,9 +30,9 @@ int	handle_cases(t_stack *stack1, t_stack *stack2)
 	if (check_sorted(stack1, stack2))
 		return (0);
 	else if (stack1->max == 2)
-		handle_2(stack1);
+		handle_2(stack1, stack2);
 	else if (stack1->max <= 3)
-		handle_3(stack1);
+		handle_3(stack1, stack2);
 	else if(stack1->max <=5)
 		handle_5(stack1, stack2);
 	else if (stack1->max <=100)
