@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 16:34:16 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:31:20 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft/libft.h"
 # include "unistd.h"
-# include <stdio.h>
 
 typedef struct	s_stack
 {
@@ -60,10 +59,11 @@ char	**parse(char *str);
 char	**parse_if_argc(int argv, char **argc);
 int		arr_len(char **arr);
 void	handle_5(t_stack *stack1, t_stack *stack2);
-void	handle_100(t_stack *stack1, t_stack *stack2);
+void	sort_long(t_stack *stack1, t_stack *stack2);
 int		get_bigger(t_stack *stack);
 int		get_min(t_stack *stack);
 void	handle_checker(int checker, t_stack *stack1, t_stack *stack2, char instruction);
 int		check_faster(t_stack *stack, int val);
+int		faster_to_top(t_stack *stack, t_portion portion);
 
 #endif

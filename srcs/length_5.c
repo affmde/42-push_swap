@@ -6,13 +6,13 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:56:51 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 16:36:06 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:11:25 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-void	handle_minmax_on_b(t_stack *stack1, t_stack *stack2)
+static void	handle_minmax_on_b(t_stack *stack1, t_stack *stack2)
 {
 	int	checker;
 	

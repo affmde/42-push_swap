@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:25:58 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 20:14:01 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:03:47 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,45 +37,19 @@ static int	check_values_range(t_stack *stack, t_stack *stack2, t_portion portion
 	return (0);
 }
 
-static int	faster_to_top(t_stack *stack, t_portion portion)
+static int	get_nbr_portions(int elems)
 {
-	int	up;
-	int	down;
-	int i;
-	
-	i = 0;
-	while (i <= stack->top)
-	{
-		if (stack->arr[i] >= portion.start && stack->arr[i] <= portion.end)
-		{
-			up = stack->arr[i];
-			break;
-		}
-		i++;
-	}
-	i = stack->top;
-	while (i >= 0)
-	{
-		if (stack->arr[i] >= portion.start && stack->arr[i] <= portion.end)
-		{
-			down = stack->arr[i];
-			break;
-		}
-		i--;
-	}
-	if (stack->top - down < up)
-		return (down);
-	else
-		return (up);
-	
+	if (elems <= 100)
+		return (6);
+	return (11);
 }
 
-void	handle_100(t_stack *stack1, t_stack *stack2)
+void	sort_long(t_stack *stack1, t_stack *stack2)
 {
 	t_portion portion;
 	int	val;
 	int	checker;
-	int range = (get_bigger(stack1) - get_min(stack1)) / 6;
+	int range = (get_bigger(stack1) - get_min(stack1)) / get_nbr_portions(stack1->max);
 
 	portion.start = get_min(stack1);
 	portion.end = portion.start + range;
@@ -93,7 +67,6 @@ void	handle_100(t_stack *stack1, t_stack *stack2)
 		portion.start += range;
 		portion.end += range;
 	}
-	
 	while (!empty(stack2))
 	{
 		int checker = check_faster(stack2, get_bigger(stack2));
@@ -101,6 +74,4 @@ void	handle_100(t_stack *stack1, t_stack *stack2)
 			handle_checker(checker, stack1, stack2, 'b');
 		pa(stack1, stack2);
 	}
-	//printf("range: %d\n", range);
-	//print_stacks(stack1, stack2);
 }
