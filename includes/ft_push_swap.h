@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/16 14:31:20 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:59:02 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct	s_portion
 	int	end;
 }		t_portion;
 
-void	print_stacks(t_stack *stack1, t_stack *stack2); //DONT FORGET TO REMOVE THIS!!!!!!!!!!!
 t_stack	*init_stack(int max);
 void	clean(t_stack *stack);
 void	free_char_arr(char **arr, int len);

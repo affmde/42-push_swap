@@ -15,7 +15,7 @@ all: $(NAME)
 
 $(NAME): $(SRCS) main.c
 	make -C libft
-	cc $(FLAGS) -o $(NAME) main.c $(SRCS) -L. ./libft/$(LIBFT) printf_stacks.c
+	cc $(FLAGS) -o $(NAME) main.c $(SRCS) -L. ./libft/$(LIBFT)
 
 clean:
 	rm -f $(LODEST)
