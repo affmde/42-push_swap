@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:45:09 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/16 14:30:57 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:51:31 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 int	main(int argv, char **argc)
 {
-	t_stack	*stack1;
-	t_stack	*stack2;
-	t_control control;
+	t_stack		*stack1;
+	t_stack		*stack2;
+	t_control	control;
 
 	if (argv < 2)
 		return (0);
-
 	if (!is_valid(argv, argc, &control))
 		output_error(1);
 	stack1 = init_stack(control.max);
