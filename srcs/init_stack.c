@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 10:54:58 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/10 14:04:16 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:37:08 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_stack	*init_stack(int max)
 {
-	t_stack *stack;
-	int	*arr;
+	t_stack	*stack;
+	int		*arr;
 
 	stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
 	if (!stack)

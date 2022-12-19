@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 11:35:57 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/10 16:43:34 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:37:20 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	fill_stack(t_stack *stack, char **argc)
 	int	i;
 
 	i = stack->max;
-
 	while (i-- > 0)
 		push(stack, ft_atoi(argc[i]));
 }

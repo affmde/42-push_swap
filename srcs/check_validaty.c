@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:09:42 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/13 08:57:25 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:37:29 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int	is_valid(int argv, char **argc, t_control *control)
 {
 	char	**arr;
 	int		len;
-
 
 	if (argv == 2)
 	{

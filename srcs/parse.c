@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 12:03:39 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/09 15:07:12 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:30:34 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	**parse(char *str)
 
 char	**parse_if_argc(int argv, char **argc)
 {
-	int i;
-	char **arr;
+	int		i;
+	char	**arr;
 
-	arr = (char**)malloc(sizeof(char*) * argv);
+	arr = (char **)malloc(sizeof(char *) * argv);
 	if (!arr)
 		return (NULL);
 	i = 0;

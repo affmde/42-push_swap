@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 16:20:34 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/11 11:03:57 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:29:48 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void	pb(t_stack *stack1, t_stack *stack2)
 	pop(stack1);
 	ft_putstr("pb\n");
 }
-

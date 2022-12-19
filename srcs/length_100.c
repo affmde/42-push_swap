@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:25:58 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/16 13:03:47 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:46:20 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	handle_portion(t_stack *stack1, t_stack *stack2, t_portion portion)
 	}
 }
 
-static int	check_values_range(t_stack *stack, t_stack *stack2, t_portion portion)
+static int	check_values_range(t_stack *stack,
+	t_stack *stack2, t_portion portion)
 {
 	int	i;
 
@@ -44,33 +45,40 @@ static int	get_nbr_portions(int elems)
 	return (11);
 }
 
-void	sort_long(t_stack *stack1, t_stack *stack2)
+static void	handle_values_to_move(t_stack *stack1,
+	t_stack *stack2, t_portion portion)
 {
-	t_portion portion;
 	int	val;
 	int	checker;
-	int range = (get_bigger(stack1) - get_min(stack1)) / get_nbr_portions(stack1->max);
 
+	val = faster_to_top(stack1, portion);
+	checker = check_faster(stack1, val);
+	while (top(stack1) != val)
+		handle_checker(checker, stack1, stack2, 'a');
+	handle_portion(stack1, stack2, portion);
+}
+
+void	sort_long(t_stack *stack1, t_stack *stack2)
+{
+	t_portion	portion;
+	int			checker;
+	int			range;
+
+	range = (get_bigger(stack1) - get_min(stack1))
+		/ get_nbr_portions(stack1->max);
 	portion.start = get_min(stack1);
 	portion.end = portion.start + range;
 	while (!empty(stack1))
 	{
 		while (check_values_range(stack1, stack2, portion))
-		{
-			
-			val = faster_to_top(stack1, portion);
-			checker = check_faster(stack1, val);
-			while (top(stack1) != val)
-				handle_checker(checker, stack1, stack2, 'a');
-			handle_portion(stack1, stack2, portion);
-		}
+			handle_values_to_move(stack1, stack2, portion);
 		portion.start += range;
 		portion.end += range;
 	}
 	while (!empty(stack2))
 	{
-		int checker = check_faster(stack2, get_bigger(stack2));
-		while(top(stack2) != get_bigger(stack2))
+		checker = check_faster(stack2, get_bigger(stack2));
+		while (top(stack2) != get_bigger(stack2))
 			handle_checker(checker, stack1, stack2, 'b');
 		pa(stack1, stack2);
 	}

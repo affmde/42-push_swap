@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 12:35:16 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/16 13:43:56 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:36:53 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	handle_cases(t_stack *stack1, t_stack *stack2)
 		handle_2(stack1, stack2);
 	else if (stack1->max <= 3)
 		handle_3(stack1, stack2);
-	else if(stack1->max <=5)
+	else if (stack1->max <= 5)
 		handle_5(stack1, stack2);
 	else
 		sort_long(stack1, stack2);

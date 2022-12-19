@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:11:29 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 16:19:51 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:29:39 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ void	reverse(t_stack *stack1, t_stack *stack2, char order)
 		rrab(stack2);
 		ft_putstr("rrr\n");
 	}
-	
 }

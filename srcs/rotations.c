@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:57:23 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/14 16:23:24 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:29:26 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	r(t_stack *stack)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
 
 	i = stack->top;
 	tmp = stack->arr[stack->top];
