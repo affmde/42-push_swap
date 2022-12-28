@@ -24,3 +24,6 @@ fclean: clean
 	rm -f $(NAME) libft/$(LIBFT)
 
 re: fclean all
+
+$(LIBFT):
+	make -C libft
