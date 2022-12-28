@@ -15,8 +15,8 @@ INC = ./my_libtf libft.h
 all: $(NAME)
 
 $(NAME) : $(SRCS)
-	cc -c $(FLAGS) -I$(INC) $(SRCS)
-	ar -rcs $(NAME) $(OBJECTS)
+	@cc -c $(FLAGS) -I$(INC) $(SRCS)
+	@ar -rcs $(NAME) $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS) $(BONUS_OBJS)

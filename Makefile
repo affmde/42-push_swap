@@ -15,7 +15,7 @@ LODEST = $(addprefix ./libft/, $(LOBJECTS))
 all: $(NAME)
 
 $(NAME): $(SRCS) main.c
-	make -C libft
+	@make -C libft
 	cc $(FLAGS) -o $(NAME) main.c $(SRCS) -L. ./libft/$(LIBFT)
 
 clean:
