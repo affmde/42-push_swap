@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:25:58 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/19 11:46:20 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/29 17:58:30 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,8 @@ static int	check_values_range(t_stack *stack,
 	return (0);
 }
 
-static int	get_nbr_portions(int elems)
-{
-	if (elems <= 100)
-		return (6);
-	return (11);
-}
-
 static void	handle_values_to_move(t_stack *stack1,
-	t_stack *stack2, t_portion portion)
+	t_stack *stack2, t_portion *portion)
 {
 	int	val;
 	int	checker;
@@ -55,7 +48,7 @@ static void	handle_values_to_move(t_stack *stack1,
 	checker = check_faster(stack1, val);
 	while (top(stack1) != val)
 		handle_checker(checker, stack1, stack2, 'a');
-	handle_portion(stack1, stack2, portion);
+	handle_portion(stack1, stack2, *portion);
 }
 
 void	sort_long(t_stack *stack1, t_stack *stack2)
@@ -64,14 +57,13 @@ void	sort_long(t_stack *stack1, t_stack *stack2)
 	int			checker;
 	int			range;
 
-	range = (get_bigger(stack1) - get_min(stack1))
-		/ get_nbr_portions(stack1->max);
+	range = get_range(stack1);
 	portion.start = get_min(stack1);
 	portion.end = portion.start + range;
 	while (!empty(stack1))
 	{
 		while (check_values_range(stack1, stack2, portion))
-			handle_values_to_move(stack1, stack2, portion);
+			handle_values_to_move(stack1, stack2, &portion);
 		portion.start += range;
 		portion.end += range;
 	}

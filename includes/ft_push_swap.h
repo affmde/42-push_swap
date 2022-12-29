@@ -6,13 +6,14 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/28 12:20:23 by andrferr         ###   ########.fr       */
+/*   Updated: 2022/12/29 17:46:26 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
 
+# include <stdio.h> //REMOVE THIS!!!!!!!!!!!!!!!!!!!!!
 # include "../libft/libft.h"
 # include <unistd.h>
 
@@ -64,6 +65,7 @@ int		get_min(t_stack *stack);
 void	handle_checker(int checker, t_stack *stack1,
 			t_stack *stack2, char instruction);
 int		check_faster(t_stack *stack, int val);
-int		faster_to_top(t_stack *stack, t_portion portion);
+int		faster_to_top(t_stack *stack, t_portion *portion);
+int		get_range(t_stack *stack);
 
 #endif
