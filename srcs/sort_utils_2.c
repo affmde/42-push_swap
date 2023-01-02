@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 13:03:29 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/29 17:48:03 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:02:49 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ static int	get_nbr_portions(int elems)
 
 int	get_range(t_stack *stack)
 {
-	unsigned long	s;
+	long long	s;
+	int			result;
 
-	s = get_bigger(stack) / 2 - get_min(stack) / 2;
-	return (s * 2 / get_nbr_portions(stack->max));
+	s = get_bigger(stack) - get_min(stack);
+	result = (int)(s / get_nbr_portions(stack->max));
+	return (result);
 }

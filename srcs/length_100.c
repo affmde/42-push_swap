@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:25:58 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/02 10:56:58 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/02 15:48:33 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	handle_portion(t_stack *stack1, t_stack *stack2, t_portion portion)
 	}
 }
 
-static int	check_values_range(t_stack *stack,
-	t_stack *stack2, t_portion portion)
+static int	check_values_range(t_stack *stack, t_portion portion)
 {
 	int	i;
 
@@ -62,7 +61,7 @@ void	sort_long(t_stack *stack1, t_stack *stack2)
 	portion.end = portion.start + range;
 	while (!empty(stack1))
 	{
-		while (check_values_range(stack1, stack2, portion))
+		while (check_values_range(stack1, portion))
 			handle_values_to_move(stack1, stack2, &portion);
 		portion.start += range;
 		portion.end += range;
