@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 12:18:51 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/03 14:41:23 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:45:16 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	get_portion_border(t_stack *stack)
 {
 	int	counter;
 	int	i;
-	int j;
+	int	j;
 	int	val;
 
 	i = 0;
@@ -35,7 +35,7 @@ int	get_portion_border(t_stack *stack)
 	{
 		j = 0;
 		counter = 0;
-		while(j <= stack->top)
+		while (j <= stack->top)
 		{
 			if (counter == stack->top - val)
 				return (stack->arr[i]);
