@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:56:51 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/19 11:41:38 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/03 19:05:30 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ static void	handle_between_nbrs(t_stack *stack1, t_stack *stack2)
 {
 	int	checker;
 
+	if (top(stack2) < top(stack1) && top(stack2) > stack1->arr[0])
+	{
+		pa(stack1, stack2);
+		return ;
+	}
 	checker = check_faster(stack1, get_min(stack1));
 	while (!(top(stack1) < top(stack2)
 			&& stack1->arr[stack1->top - 1] > top(stack2)))
