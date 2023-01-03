@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/02 13:21:10 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/03 13:18:45 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void	handle_checker(int checker, t_stack *stack1,
 int		check_faster(t_stack *stack, int val);
 int		faster_to_top(t_stack *stack, t_portion *portion);
 int		get_range(t_stack *stack);
+int		get_portion_border(t_stack *stack);
 
 #endif

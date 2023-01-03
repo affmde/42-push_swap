@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 13:03:29 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/02 16:02:49 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/03 14:53:45 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,8 @@ int	faster_to_top(t_stack *stack, t_portion *portion)
 	int	down;
 
 	handle_checkes(stack, portion, &up, &down);
-	if (stack->top - down < up)
-		return (down);
-	else
+	if (stack->top - up < down)
 		return (up);
-}
-
-static int	get_nbr_portions(int elems)
-{
-	if (elems <= 100)
-		return (6);
-	return (11);
-}
-
-int	get_range(t_stack *stack)
-{
-	long long	s;
-	int			result;
-
-	s = get_bigger(stack) - get_min(stack);
-	result = (int)(s / get_nbr_portions(stack->max));
-	return (result);
+	else
+		return (down);
 }
