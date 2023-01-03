@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 12:18:51 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/03 15:45:16 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:48:14 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	get_nbr_portions(int elems)
 	return (elems / 10);
 }
 
-int	get_portion_border(t_stack *stack)
+int	get_portion_end(t_stack *stack)
 {
 	int	counter;
 	int	i;
