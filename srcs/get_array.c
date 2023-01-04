@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 11:00:11 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/04 11:51:43 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:54:32 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static char	*join(char *str1, char *str2)
 {
 	char	*tmp;
 	char	*tmp2;
+
 	tmp = ft_strjoin(str1, " ");
 	if (!tmp)
 		return (NULL);
@@ -28,13 +29,14 @@ static char	*join(char *str1, char *str2)
 static char	*get_str(int argc, char **argv)
 {
 	int		i;
-	char *str;
+	char	*str;
 
 	i = 1;
 	str = ft_strdup(argv[1]);
 	while (i < argc - 1)
 	{
-		if (!(str = join(str, argv[i + 1])))
+		str = join(str, argv[i + 1]);
+		if (!str)
 			return (NULL);
 		i++;
 	}
