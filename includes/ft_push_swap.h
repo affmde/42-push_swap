@@ -6,13 +6,14 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/03 17:50:48 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:42:19 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
 
+# include <stdio.h> //DELETE THIS!!!!!!!!!!!!
 # include "../libft/libft.h"
 # include <unistd.h>
 
@@ -36,6 +37,7 @@ typedef struct s_portion
 }		t_portion;
 
 t_stack	*init_stack(int max);
+int		get_array(t_control *control, int argc, char **argv);
 void	clean(t_stack *stack);
 void	free_char_arr(char **arr, int len);
 int		is_valid(int argv, char **argc, t_control *control);

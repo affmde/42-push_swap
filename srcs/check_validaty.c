@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:09:42 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/19 11:37:29 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:52:21 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,12 @@ static int	check_no_digits(int len, char **arr)
 
 int	is_valid(int argv, char **argc, t_control *control)
 {
-	char	**arr;
 	int		len;
 
-	if (argv == 2)
-	{
-		arr = parse(argc[1]);
-		len = arr_len(arr);
-	}
-	if (argv > 2)
-	{
-		arr = parse_if_argc(argv, argc);
-		len = arr_len(arr);
-	}
-	control->arr = arr;
-	if (!check_no_digits(len, arr))
+	len = arr_len(control->arr);
+	if (!check_no_digits(len, control->arr))
 		return (0);
-	if (!is_repeated(len, arr))
+	if (!is_repeated(len, control->arr))
 		return (0);
 	control->max = len;
 	return (1);

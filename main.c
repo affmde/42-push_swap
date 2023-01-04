@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:45:09 by andrferr          #+#    #+#             */
-/*   Updated: 2022/12/19 11:51:31 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:42:34 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int argv, char **argc)
 
 	if (argv < 2)
 		return (0);
+	if (!get_array(&control, argv, argc))
+		return (1);
 	if (!is_valid(argv, argc, &control))
 		output_error(1);
 	stack1 = init_stack(control.max);
