@@ -6,7 +6,7 @@
 /*   By: andrferr <andrferr@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:10:59 by andrferr          #+#    #+#             */
-/*   Updated: 2023/01/04 11:55:14 by andrferr         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:58:29 by andrferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ void	pb(t_stack *stack1, t_stack *stack2);
 void	rotation(t_stack *stack1, t_stack *stack2, char instruction);
 void	reverse(t_stack *stack1, t_stack *stack2, char order);
 void	handle_3(t_stack *stack1, t_stack *stack2);
-char	**parse(char *str);
-char	**parse_if_argc(int argv, char **argc);
 int		arr_len(char **arr);
 void	handle_5(t_stack *stack1, t_stack *stack2);
 void	sort_long(t_stack *stack1, t_stack *stack2);
